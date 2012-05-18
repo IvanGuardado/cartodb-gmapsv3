@@ -84,6 +84,8 @@ If you don't want to write the name of the table several times, you can use {{ta
 We strongly recommend the use of the files available in this repository. These are tested, and if you decide use updated ones, the library could not work.
 
 # Custom infowindow
+You can see a [live example](http://demos.ivanguardado.com/cartodb-gmapsv3-1/)
+
 You can pass an object as infowindow parameter to set your own style. The object accepts the following parameters:
 <table>
 <tr>
