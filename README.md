@@ -51,7 +51,7 @@ Using the library is really easy. It accepts the following parameters to manage 
 
 <tr>
 <td>infowindow</td>
-<td>If you want to add interactivity to the layer, showing the info window.</td>
+<td>If you want to add interactivity to the layer, showing the info window. The value can be a string containing the sql to get te feature from the server o an object defining your custom infowindow</td>
 <td>No</td>
 </tr>
 
@@ -82,6 +82,46 @@ If you choose a CartoDB private table you'll need to [authenticate](http://devel
 If you don't want to write the name of the table several times, you can use {{table_name}} in the `query`, `tile_style` and `infowindow` parameters. {{feature}} is required in the `infowindow` paramenter when you want to show specific information on it.
 
 We strongly recommend the use of the files available in this repository. These are tested, and if you decide use updated ones, the library could not work.
+
+# Custom infowindow
+You can pass an object as infowindow parameter to set your own style. The object accepts the following parameters:
+<table>
+<tr>
+<td><b>Parameter name</b></td>
+<td><b>Description</b></td>
+<td><b>Required</b></td>
+</tr>
+
+<tr>
+<td>sql</td>
+<td>The sql to get information from the server for the specific infowindow</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>template</td>
+<td>The html to generate the infowindow. You can use {{field_name}} into the markup and it will be replaced by the value from the query result.</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>pixelOffset</td>
+<td>The offset distance from the marker point. The value can be a google.maps.Size object or a callback. The callback will be called with the infobox's width and height as parameters and it must return a google.maps.Size object</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>A CSS class to append to the root div</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>width</td>
+<td>The infowindow's width</td>
+<td>No</td>
+</tr>
+</table>
 
 # Example
 
